@@ -26,11 +26,9 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void dropUsersTable() {
 
-        try (Statement statement = Util.getConnection().createStatement();
-        ) {
+        try (Statement statement = Util.getConnection().createStatement()) {
             String sql = "DROP TABLE User";
             statement.executeUpdate(sql);
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -45,7 +43,6 @@ public class UserDaoJDBCImpl implements UserDao {
 
             statement.executeUpdate();
             System.out.printf("User с именем — %s добавлен в базу данных\n", name);
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
